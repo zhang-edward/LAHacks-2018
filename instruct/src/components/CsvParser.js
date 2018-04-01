@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TextSegment from './TextSegment';
+import SegmentAnalysis from './SegmentAnalysis';
 import '../styles/CsvParser.css';
 
 class CsvParser extends Component {
@@ -24,16 +25,17 @@ class CsvParser extends Component {
 			});
 	}
 
-	renderSegment(segment) {
+	renderSegment = (segment) => {
 		return (
 			<TextSegment
-				onClick={(segment) => this.setState({ selectedSegment: segment })}
+				onTextSegmentSelected={segment => this.setState({ selectedSegment: segment }) }
 				key={segment.pathToImage}
-				text={segment.segmentText}/>
+				segment={segment}/>
 		);
 	}
 
 	render() {
+		console.log(this.state.selectedSegment);
 		return (
 			<div className="container">
 				<div className="container-child">
@@ -42,6 +44,7 @@ class CsvParser extends Component {
 				</div>
 				<div className="container-child">
 					<p><u>Analysis</u></p>
+					<SegmentAnalysis segment={this.state.selectedSegment}/>
 				</div>
 			</div>
 

@@ -4,9 +4,11 @@ const formidable = require('formidable');
 const path = require('path');
 const csvFilePath = './uploads/output.csv';
 const csv = require('csvtojson');
-
+const spawn = require("child_process").spawn;
 
 const app = express();
+
+app.use(express.static(__dirname + 'public'));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/ping', function (req, res) {
@@ -28,6 +30,7 @@ app.post('/', function (req, res){
 
     form.on('file', function (name, file){
         console.log('Uploaded ' + file.name);
+        var pythonProcess = spawn('python',["path/to/script.py"]);
     });
 
     res.sendFile(__dirname + '/public/index.html');
