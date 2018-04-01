@@ -1,5 +1,5 @@
 .text-segment {
-	font-family: optima;
+	font-family: 'Lato';
 	font-size: 12px;
 	transition: background-color 0.5s;
 	cursor: pointer;
