@@ -5,6 +5,7 @@ const path = require('path');
 const csvFilePath = './uploads/output.csv';
 const csv = require('csvtojson');
 const spawn = require("child_process").spawn;
+const PythonShell = require('python-shell');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res){
     var form = new formidable.IncomingForm();
+    form.maxFileSize = 200 * 1024 * 1024;
 
     form.parse(req);
 
@@ -29,8 +31,8 @@ app.post('/', function (req, res){
     });
 
     form.on('file', function (name, file){
-        console.log('Uploaded ' + file.name);
-        var pythonProcess = spawn('python',["path/to/script.py"]);
+        //console.log('Uploaded ' + file.name);
+        //var pythonProcess = spawn('python',[__dirname + ]);
     });
 
     res.sendFile(__dirname + '/public/index.html');
@@ -46,10 +48,17 @@ app.get('/data', function (req, res) {
             data['data'].push(jsonObj);
         })
         .on('done',(error)=>{
-            // console.log(data);
-            // console.log('end');
+            //console.log(data);
+            console.log('end');
             res.send(data);
         });
+});
+
+app.get('/py', function (req, res) { 
+    PythonShell.run('backend.py', function (err) {
+        //if (err) throw err;
+        console.log('finished');
+    });
 });
 
 app.listen(process.env.PORT || 8080);
