@@ -12,7 +12,7 @@ class App extends Component {
         </header>
 
         <p>
-          Welcome to Instruct.ai. To get started, upload a video file.
+          Welcome to Instruct.ai! To get started, upload a video file.
         </p>
 
         <div className="form-container">
@@ -23,7 +23,6 @@ class App extends Component {
             </form>
           </div>
         </div>
-        I'm a csv parser!
         <CsvParser/>
       </div>
     );
