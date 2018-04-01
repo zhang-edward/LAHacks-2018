@@ -3,10 +3,10 @@ import '../styles/TextSegment.css';
 
 const TextSegment = (props) => {
 	return (
-		<span 
+		<span
 			className="text-segment"
-			onClick={props.onClick}>
-			{props.text}
+			onClick={() => props.onTextSegmentSelected(props.segment)}>
+			{props.segment.segmentText}
 		</span>
 	);
 }
