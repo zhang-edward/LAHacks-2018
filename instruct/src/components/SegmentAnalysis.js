@@ -12,7 +12,7 @@ const SegmentAnalysis = (props) => {
 		<div>
 			<img 
 				alt="screen cap"
-				style={{ width: 200, height: 200 }} 
+				style={{ width: 500, height: 400 }} 
 				src={process.env.PUBLIC_URL + '/frames/' + props.segment.imagePath + '.jpg'}/>
 			<p>Attentiveness: {props.segment.attentiveness}</p>
 		</div>

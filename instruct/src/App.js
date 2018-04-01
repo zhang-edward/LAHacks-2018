@@ -12,7 +12,7 @@ class App extends Component {
         </header>
 
         <p>
-          Welcome to Instruct.ai. To get started, upload a video file named 'file.mp4'.
+          Welcome to Instruct.ai. To get started, upload a video file.
         </p>
 
         <div className="form-container">
