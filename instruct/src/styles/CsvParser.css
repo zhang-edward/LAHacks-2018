@@ -3,8 +3,11 @@
 }
 
 .container-child {
-	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-color: #eef;
 	border: 1px solid #dde;
-	border-radius: 4px;
-	box-shadow: 0px 2px 5px 0px #ddd;
+	border-radius: 8px;
+	margin: 0 0 10px 0;
+	box-shadow: 0px 2px 2px 0px #ddd;
 }

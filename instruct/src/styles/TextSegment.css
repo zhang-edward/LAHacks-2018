@@ -1,9 +1,12 @@
 .text-segment {
-	background-color: white;
-	transition: background-color .2s;
+	font-family: optima;
+	font-size: 12px;
+	transition: background-color 0.5s;
 	cursor: pointer;
 }
   
 .text-segment:hover {
-	background-color: #ccc;
+	background-color: #98FB98;
+	background-blend-mode: soft-light;
+	background-size: auto;
 }
