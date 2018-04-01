@@ -1,6 +1,6 @@
 .app {
 	text-align: center;
-	font-family: 'Lato', sans-serif;
+	font-family: optima, sans-serif;
 }
 
 .title {
@@ -11,6 +11,7 @@
 	border-radius: 0 0 4 4;
 	box-shadow: 0px 2px 5px 0px #ddd;
 	margin-bottom: 40px;
+	border-radius: 8px;
 }
 
 h1 {
@@ -22,6 +23,7 @@ h1 {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	justify-content: center;
+	margin: 0 0 20px 0;
 }
 
 .form {
