@@ -19,10 +19,6 @@ Things needed: an .MP4 file of lecture, with the point of view facing the audein
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Contributors
 
 * **Daksh Idnani**
