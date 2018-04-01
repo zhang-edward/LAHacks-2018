@@ -1,11 +1,13 @@
 import React from 'react';
+import '../styles/TextSegment.css';
 
 const TextSegment = (props) => {
 	return (
-		<div>
-			hello
+		<span 
+			className="text-segment"
+			onClick={props.onClick}>
 			{props.text}
-		</div>
+		</span>
 	);
 }
 

@@ -1,43 +1,50 @@
 import React, { Component } from 'react';
 import TextSegment from './TextSegment';
-import CsvParse from '@vtex/react-csv-parse'
+import '../styles/CsvParser.css';
 
 class CsvParser extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { data: [] };
+		this.state = { 
+			data: [],
+			selectedSegment: {}
+		};
 	}
 
 	componentWillMount() {
 		fetch('/data')
 			.then((response) => response.json())
 			.then((responseJson) => {
-				console.log(responseJson);
-				this.setState({ data: responseJson });
+				console.log("Response: ");
+				console.log(responseJson.data)
+				this.setState({ data: responseJson.data });
 			})
 			.catch((error) => {
 		  		console.error(error);
 			});
 	}
 
-	renderTextSegment(segment) {
-		console.log("hello");
+	renderSegment(segment) {
 		return (
-			<div>
-				hello
-				<TextSegment
-					text={segment.segmentText}/>
-			</div>
+			<TextSegment
+				onClick={(segment) => this.setState({ selectedSegment: segment })}
+				key={segment.pathToImage}
+				text={segment.segmentText}/>
 		);
 	}
 
 	render() {
-		console.log(this.state.data);
-		console.log("rerender");
 		return (
-			<div>
-				
+			<div className="container">
+				<div className="container-child">
+					<p><u>Transcript</u></p>
+					{this.state.data.map(this.renderSegment)}
+				</div>
+				<div className="container-child">
+					<p><u>Analysis</u></p>
+				</div>
 			</div>
+
 		);
 	}
 }

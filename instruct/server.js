@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const formidable = require('formidable');
 const path = require('path');
-const csvFilePath = './uploads/test.csv';
+const csvFilePath = './uploads/output.csv';
 const csv = require('csvtojson');
 
 

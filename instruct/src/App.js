@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CsvParser from './components/CsvParser';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
 

@@ -1,0 +1,9 @@
+.text-segment {
+	background-color: white;
+	transition: background-color .2s;
+	cursor: pointer;
+}
+  
+.text-segment:hover {
+	background-color: #ccc;
+}
