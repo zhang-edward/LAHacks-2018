@@ -6,7 +6,7 @@ const TextSegment = (props) => {
 		<span
 			className="text-segment"
 			onClick={() => props.onTextSegmentSelected(props.segment)}>
-			{props.segment.segmentText}
+			{props.segment.segmentText + " "}
 		</span>
 	);
 }

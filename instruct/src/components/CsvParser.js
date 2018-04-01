@@ -12,7 +12,7 @@ class CsvParser extends Component {
 		};
 	}
 
-	componentWillMount() {
+	fetchData = () => {
 		fetch('/data')
 			.then((response) => response.json())
 			.then((responseJson) => {
@@ -23,6 +23,10 @@ class CsvParser extends Component {
 			.catch((error) => {
 		  		console.error(error);
 			});
+	}
+
+	runPython = () => {
+		fetch('/py');
 	}
 
 	renderSegment = (segment) => {
@@ -38,6 +42,13 @@ class CsvParser extends Component {
 		console.log(this.state.selectedSegment);
 		return (
 			<div className="container">
+				<button onClick={this.runPython}> 
+					Process Video
+				</button>
+				<button onClick={this.fetchData}>
+					View Analysis
+				</button>
+
 				<div className="container-child">
 					<p><u>Transcript</u></p>
 					{this.state.data.map(this.renderSegment)}
